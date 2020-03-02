@@ -11,23 +11,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.evotingapi.model.Candidate;
 import com.evotingapi.model.Voter;
+import com.evotingapi.services.CandidateService;
 import com.evotingapi.services.VoterService;
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
-//@RequestMapping("/loginpage")
-public class VoterController {
-	
+@RequestMapping("/voterloginpage")
+public class VoterLoginPageController {
 	@Autowired
 	private VoterService voterService;
 	
-	@PostMapping("/voter")
-	public Voter voterSave(@RequestBody Voter voter){
-		return voterService.saveVoter(voter);
+	@GetMapping(value="/all")
+	public List<Voter> getVoters(){
+		return voterService.getVoters();
 	}
-	
-	
-	
-	
+//	
+//	@GetMapping(value="/{id}")
+//	public Voter getVoter(@PathVariable("id") Long id) {
+//		return voterService.getVoter(id);
+//	}
+	@PostMapping(value = "/"+ "")
+	public Voter validateCredentials(@RequestBody Voter voter) {
+		return voterService.findVoterByLogin(voter);
+	}
 }
