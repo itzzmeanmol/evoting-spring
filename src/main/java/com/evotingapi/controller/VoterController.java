@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +26,11 @@ public class VoterController {
 	@PostMapping("/voter")
 	public Voter voterSave(@RequestBody Voter voter){
 		return voterService.saveVoter(voter);
+	}
+	@PostMapping("/updateflag")
+	public int saveFlag(@RequestBody Voter voter) {
+		System.out.println(voter);
+		return voterService.updateFlag(voter);
 	}
 	
 	

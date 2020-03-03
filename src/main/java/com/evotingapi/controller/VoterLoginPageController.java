@@ -27,9 +27,11 @@ public class VoterLoginPageController {
 	public List<Voter> getVoters(){
 		return voterService.getVoters();
 	}
+	
+	
 
-	@PostMapping(value = "/"+ "")
-	public Voter validateCredentials(@RequestBody Voter voter) {
-		return voterService.findVoterByLogin(voter);
-	}
+//	@PostMapping(value = "/"+ "")
+//	public Voter validateCredentials(@RequestBody Voter voter) {
+//		return voterService.findVoterByLogin(voter);
+//	}
 }

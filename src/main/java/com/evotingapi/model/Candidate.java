@@ -32,6 +32,8 @@ public class Candidate {
 	private String password;
 	@Column(name="votecount")
 	private int votecount;
+	@Column(name="flag")
+	private int flag;
 	public int getVotecount() {
 		return votecount;
 	}
@@ -87,7 +89,7 @@ public class Candidate {
 		this.password = password;
 	}
 	public Candidate(Long id, String name, int vin, String city, int age, String gender, String partyname,
-			String password, int votecount) {
+			String password, int votecount, int flag) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -98,6 +100,13 @@ public class Candidate {
 		this.partyname = partyname;
 		this.password = password;
 		this.votecount = votecount;
+		this.flag = flag;
+	}
+	public int getFlag() {
+		return flag;
+	}
+	public void setFlag(int flag) {
+		this.flag = flag;
 	}
 	
 	

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.evotingapi.model.Voter;
 import com.evotingapi.repository.VoterRepository;
@@ -23,7 +24,11 @@ public class VoterService {
 		return voterRepository.findById(id).get();
 	}
 	
-	public Voter findVoterByLogin(Voter voter) {
-		return voterRepository.findVoterByLogin(voter.getVin(), voter.getPassword());
+//	public Voter findVoterByLogin(Voter voter) {
+//		return voterRepository.findVoterByLogin(voter.getVin(), voter.getPassword());
+//	}
+	public int  updateFlag(Voter voter) {
+		System.out.println("Hello");
+		return voterRepository.updateFlag(voter.getVin());
 	}
 }

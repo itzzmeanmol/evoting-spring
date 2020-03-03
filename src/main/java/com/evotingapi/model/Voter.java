@@ -24,24 +24,27 @@ public class Voter {
 	private int vin;
 	@Column(name="city")
 	private String city;
-//	@Column(name="imagename")
-//	private String imagename;
-//	@Column(name="pic_byte", length=1000)
-//	private byte[] pic_byte;
-//	@Column(name="type")
-//	private String type;
+
 	@Column(name="password")
 	private String password;
-	public Voter(Long id, String name, int vin, String city, String password) {
+	@Column(name="flag")
+	private String flag;
+	public Voter(Long id, String name, int vin, String city, String password, String flag) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.vin = vin;
 		this.city = city;
-//		this.imagename = imagename;
-//		this.pic_byte = pic_byte;
-//		this.type = type;
 		this.password = password;
+		this.flag = flag;
+	}
+
+	public String getFlag() {
+		return flag;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag;
 	}
 
 	public String getPassword() {
@@ -84,27 +87,5 @@ public class Voter {
 		this.city = city;
 	}
 
-//	public String getImagename() {
-//		return imagename;
-//	}
-//
-//	public void setImagename(String imagename) {
-//		this.imagename = imagename;
-//	}
-//
-//	public byte[] getPic_byte() {
-//		return pic_byte;
-//	}
-//
-//	public void setPic_byte(byte[] pic_byte) {
-//		this.pic_byte = pic_byte;
-//	}
-//
-//	public String getType() {
-//		return type;
-//	}
-//
-//	public void setType(String type) {
-//		this.type = type;
-//	}
+
 }
