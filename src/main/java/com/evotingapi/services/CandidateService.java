@@ -29,4 +29,8 @@ public class CandidateService {
 	public Candidate findCandidateByLogin(Candidate candidate) {
 		return candidateRepository.findCandidateByLogin(candidate.getVin(), candidate.getPassword());
 	}
+	
+	public int addVote(Candidate candidate) {
+		return candidateRepository.addVote(candidate.getVin());
+	}
 }

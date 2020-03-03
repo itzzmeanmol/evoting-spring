@@ -21,4 +21,9 @@ public class CandidateController {
 	public Candidate candidateSave(@RequestBody Candidate candidate){
 		return candidateService.saveCandidate(candidate);
 	}
+	
+	@PostMapping("/addvote")
+	public int addVote(@RequestBody Candidate candidate) {
+		return candidateService.addVote(candidate);
+	}
 }

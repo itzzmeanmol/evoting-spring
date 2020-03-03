@@ -32,8 +32,12 @@ public class VoterController {
 		System.out.println(voter);
 		return voterService.updateFlag(voter);
 	}
-	
-	
-	
-	
+	@PostMapping("/deletevoter")
+	public void deleteVoter(@RequestBody Voter voter) {
+		voterService.deleteVoter(voter);
+	}
+	@PostMapping("/castvote")
+	public void castVote(@RequestBody Voter voter) {
+		voterService.castVote(voter);
+	}
 }

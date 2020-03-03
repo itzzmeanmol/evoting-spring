@@ -24,12 +24,21 @@ public class Voter {
 	private int vin;
 	@Column(name="city")
 	private String city;
+	@Column(name="castvote")
+	private int castvote;
+	public int getCastvote() {
+		return castvote;
+	}
+
+	public void setCastvote(int castvote) {
+		this.castvote = castvote;
+	}
 
 	@Column(name="password")
 	private String password;
 	@Column(name="flag")
 	private String flag;
-	public Voter(Long id, String name, int vin, String city, String password, String flag) {
+	public Voter(Long id, String name, int vin, String city, String password, String flag, int castvote) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -37,6 +46,7 @@ public class Voter {
 		this.city = city;
 		this.password = password;
 		this.flag = flag;
+		this.castvote = castvote;
 	}
 
 	public String getFlag() {

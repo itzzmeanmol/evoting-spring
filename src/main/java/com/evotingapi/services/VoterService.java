@@ -31,4 +31,12 @@ public class VoterService {
 		System.out.println("Hello");
 		return voterRepository.updateFlag(voter.getVin());
 	}
+	
+	public void deleteVoter(Voter voter) {
+		voterRepository.delete(voter);
+	}
+	
+	public void castVote(Voter voter) {
+		voterRepository.castVote(voter.getVin());
+	}
 }
