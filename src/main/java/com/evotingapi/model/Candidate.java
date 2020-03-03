@@ -30,6 +30,14 @@ public class Candidate {
 	private String partyname;
 	@Column(name="password")
 	private String password;
+	@Column(name="votecount")
+	private int votecount;
+	public int getVotecount() {
+		return votecount;
+	}
+	public void setVotecount(int votecount) {
+		this.votecount = votecount;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -79,7 +87,7 @@ public class Candidate {
 		this.password = password;
 	}
 	public Candidate(Long id, String name, int vin, String city, int age, String gender, String partyname,
-			String password) {
+			String password, int votecount) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -89,6 +97,7 @@ public class Candidate {
 		this.gender = gender;
 		this.partyname = partyname;
 		this.password = password;
+		this.votecount = votecount;
 	}
 	
 	
