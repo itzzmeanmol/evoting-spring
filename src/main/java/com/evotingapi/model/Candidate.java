@@ -102,6 +102,12 @@ public class Candidate {
 		this.votecount = votecount;
 		this.flag = flag;
 	}
+	@Override
+	public String toString() {
+		return "Candidate [id=" + id + ", name=" + name + ", vin=" + vin + ", city=" + city + ", age=" + age
+				+ ", gender=" + gender + ", partyname=" + partyname + ", password=" + password + ", votecount="
+				+ votecount + ", flag=" + flag + "]";
+	}
 	public int getFlag() {
 		return flag;
 	}

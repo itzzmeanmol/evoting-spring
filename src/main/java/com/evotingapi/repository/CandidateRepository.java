@@ -1,5 +1,7 @@
 package com.evotingapi.repository;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,4 +21,9 @@ public interface CandidateRepository extends JpaRepository<Candidate, Long> {
 	@Modifying
 	@Query(value = "update Candidates c set c.votecount = c.votecount+1 where c.vin=?1", nativeQuery = true)
 	int addVote(@Param("vin") int vin);
+	
+	@Query(value= "select c.name from Candidate c group by c.city",nativeQuery = true)
+	List<Candidate> showResults();
+	
+
 }
