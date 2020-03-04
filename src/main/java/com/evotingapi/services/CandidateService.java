@@ -33,7 +33,7 @@ public class CandidateService {
 	public int addVote(Candidate candidate) {
 		return candidateRepository.addVote(candidate.getVin());
 	}
-	public List<Candidate> getResults() {
+	public List<Object[]> getResults() {
 		return candidateRepository.showResults();
 	}
 }

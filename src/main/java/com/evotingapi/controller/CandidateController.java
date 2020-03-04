@@ -31,7 +31,7 @@ public class CandidateController {
 	}
 	
 	@GetMapping("/showresults")
-	public List<Candidate> getResults() {
+	public List<Object[]> getResults() {
 		return candidateService.getResults();
 	}
 }

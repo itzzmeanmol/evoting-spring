@@ -22,8 +22,8 @@ public interface CandidateRepository extends JpaRepository<Candidate, Long> {
 	@Query(value = "update Candidates c set c.votecount = c.votecount+1 where c.vin=?1", nativeQuery = true)
 	int addVote(@Param("vin") int vin);
 	
-	@Query(value= "select c.name from Candidate c group by c.city",nativeQuery = true)
-	List<Candidate> showResults();
+	@Query(value= "select c.name, c.city, max(c.votecount) from Candidates c group by c.city",nativeQuery = true)
+	List<Object[]> showResults();
 	
 
 }
