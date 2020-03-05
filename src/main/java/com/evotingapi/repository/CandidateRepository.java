@@ -26,4 +26,8 @@ public interface CandidateRepository extends JpaRepository<Candidate, Long> {
 	List<Object[]> showResults();
 	
 
+	@javax.transaction.Transactional
+	@Modifying(clearAutomatically = true)
+	@Query(value= "update Candidates v set v.flag=1 where v.vin=?1",nativeQuery = true)
+	int updateFlag(@Param("vin") int vin);
 }

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.evotingapi.model.Candidate;
-
+import com.evotingapi.model.Voter;
 import com.evotingapi.repository.CandidateRepository;
 
 @Service
@@ -35,5 +35,14 @@ public class CandidateService {
 	}
 	public List<Object[]> getResults() {
 		return candidateRepository.showResults();
+	}
+	
+	public int  updateFlag(Candidate candidate) {
+//		System.out.println("Hello");
+		return candidateRepository.updateFlag(candidate.getVin());
+	}
+	
+	public void deleteCandidate(Candidate candidate) {
+		candidateRepository.delete(candidate);
 	}
 }

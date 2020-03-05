@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.evotingapi.model.Candidate;
-
+import com.evotingapi.model.Voter;
 import com.evotingapi.services.CandidateService;
 
 @RestController
@@ -33,5 +33,15 @@ public class CandidateController {
 	@GetMapping("/showresults")
 	public List<Object[]> getResults() {
 		return candidateService.getResults();
+	}
+	
+	@PostMapping("/updatecandidateflag")
+	public int saveFlag(@RequestBody Candidate candidate) {
+//		System.out.println(voter);
+		return candidateService.updateFlag(candidate);
+	}
+	@PostMapping("/deletecandidate")
+	public void deleteCandidate(@RequestBody Candidate candidate) {
+		candidateService.deleteCandidate(candidate);
 	}
 }
