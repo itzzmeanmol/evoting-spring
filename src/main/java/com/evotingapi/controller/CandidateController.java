@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.evotingapi.model.Candidate;
 import com.evotingapi.model.Voter;
 import com.evotingapi.services.CandidateService;
+import com.evotingapi.services.QandaService;
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
@@ -44,4 +45,6 @@ public class CandidateController {
 	public void deleteCandidate(@RequestBody Candidate candidate) {
 		candidateService.deleteCandidate(candidate);
 	}
+	
+	
 }
